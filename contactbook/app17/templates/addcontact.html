@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        h1{
+            text-align: center;
+            color: brown;
+        }
+        body{
+            background-color: aqua;
+        }
+        #contact {width:100%; height:100%; margin: 0  auto; background: #DDD; }
+
+.container {width:960px; height:auto; margin: 0 auto; padding: 50px 0;}
+
+#contact .container form input,
+#contact .container form textarea {
+	width:97.4%;
+	height:30px;
+	padding:5px 10px;
+	font-size: 12px;
+	color:#999;
+	letter-spacing:1px;
+	background: #FFF;
+	border:2px solid #FFF;
+	margin-bottom:25px;
+  -webkit-transition:all .1s ease-in-out;
+	-moz-transition:all .1s ease-in-out;
+	-ms-transition:all .1s ease-in-out;
+	-o-transition:all .1s ease-in-out;
+	transition:all .1s ease-in-out;}
+
+#contact .container form input:focus,
+#contact .container form textarea:focus {
+	border:2px solid #dd4545;
+	color:#999;}
+
+#contact .container form textarea {
+	height:150px;}
+
+#contact .container form .submit {
+    margin-left: 150px;
+	width:50%;
+	padding:5px 10px;
+	font-size: 20px;
+	letter-spacing:1px;
+	background:white;
+	height:40px;
+	text-transform:uppercase;
+	letter-spacing:1px;
+	color:black;
+	border:2px solid white;
+  -webkit-transition:all .1s ease-in-out;
+	-moz-transition:all .1s ease-in-out;
+	-ms-transition:all .1s ease-in-out;
+	-o-transition:all .1s ease-in-out;
+	transition:all .1s ease-in-out;}
+    
+
+/* #contact .container form .submit:hover {
+	color:#FFF;
+	border:2px solid #dd4545;
+	background:white;
+	cursor:pointer;} */
+
+#contact .container form .required {
+	color:rgb(198, 21, 21);}
+        
+        
+    </style>
+  </head>
+  <body>
+    <h1>ADD CONTACT</h1><br><br><br>
+    <section id="contact">
+  
+        <div class="container">
+        
+        <form name="htmlform" method="post" action="{% url 'addcontact'%}">
+          {% csrf_token %}
+        
+        <input type="text" name="first_name" placeholder="NAME" required>
+          
+        <input  type="phone" name="phone" placeholder="PHONE NUMBER" required>
+          
+        <!-- <textarea name="comments" placeholder="MESSAGE" required ></textarea> -->
+          
+        <button name="send" type="submit" class="submit">ADD</button>
+          
+        </form>
+         
+          </div>
+          </section>
+    
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
